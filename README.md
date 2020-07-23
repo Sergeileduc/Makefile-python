@@ -10,6 +10,7 @@ foo@bar:~$ make help
 default              set up the virtual environment
 lint                 check style with flake8
 test                 run all tests with pytest
+run                  run python main project file (configure in MAIN value)
 clean                remove all build, test, coverage and Python artifacts
 clean-pyc            remove Python file artifacts
 clean-test           remove test and coverage artifacts

@@ -5,6 +5,13 @@
 # See https://github.com/sio/Makefile.venv
 include Makefile.venv
 
+################################
+# Configuration variables
+MAIN?=app.py
+################################
+
+################################
+# Define script for make help
 define PRINT_HELP_PYSCRIPT
 import re, sys
 
@@ -15,6 +22,7 @@ for line in sys.stdin:
 		print("%-20s %s" % (target, help))
 endef
 export PRINT_HELP_PYSCRIPT
+################################
 
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
@@ -32,6 +40,9 @@ lint: $(VENV)/flake8 ## check style with flake8
 
 test: $(VENV)/pytest ## run all tests with pytest
 	$(VENV)/pytest
+
+run: $(VENV)/pytest ## run python main project file (configure in MAIN value)
+	$(VENV)/python $(MAIN)
 
 # pipreqs: $(VENV)/pipreqs
 # 	$(VENV)/pipreqs --force --ignore .venv . 

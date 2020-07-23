@@ -2,9 +2,6 @@
 # -*-coding:utf-8 -*-
 """Docstring."""
 
-def hello():
-    print("Hello world")
+from hello import hello
 
-a = 1
-b = 1
-c=a+b
+hello()

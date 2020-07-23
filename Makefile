@@ -1,4 +1,3 @@
-# Makefile for controlling python virtual environments etc
 .PHONY: clean clean-test clean-pyc help
 .DEFAULT_GOAL := help
 
@@ -7,7 +6,7 @@ include Makefile.venv
 
 ################################
 # Configuration variables
-MAIN?=app.py
+MAIN?=app.py ## main file to be ran when useing make run
 ################################
 
 ################################
